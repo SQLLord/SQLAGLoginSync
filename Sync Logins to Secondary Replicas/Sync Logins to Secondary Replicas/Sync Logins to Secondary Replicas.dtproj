@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">N1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6hWkyT4lzUa88ubG/TH3uwAAAAACAAAAAAADZgAAwAAAABAAAACGZ1IHBFIjKlfh6vrFHB2fAAAAAASAAACgAAAAEAAAAIIJ+3alCKpBiYEOjHTsHCmIAAAAx15Q8bC/wcsy8aLKGG5hc9Q+8W2tvHJf66NuqNvVCdky48Rc1vVT3yFxJN/6dDVNZHpSG+o5NceAWDnt9Ja55UzLIbiIpQLQp9bS+Gm3jvTCOtSFK3XwvDhaV6PgvXT2aPgkuuVYvnul91VIF9zuIluBEAcABZWfmuq1K5mqX7UPbqWNDY22chQAAADR+tpfVBPZKos/HQvHdPzMvYHIrw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6hWkyT4lzUa88ubG/TH3uwAAAAACAAAAAAADZgAAwAAAABAAAADx1h4kckkrIFhHrqZFiG6uAAAAAASAAACgAAAAEAAAAAu+BqL20auFBb0SdoMDoByIAAAAyo4u2IIZ0fW++tfEFXuS5TPv8GKb41+dAerslcZfswFPzM40FLL/J3FgVL2Zdc9xewAKMbEaQbCuV1Yvzg2/9cKHGJHYMeMoYb4+LhTTWxOSgNVI9o+NjzTzUUsDDhDhXgl3bB22eIGi41kBYAEbhZXNxMa0ZHa7cOQ/AnXFtQlGfkYL7mo1YBQAAAB45Te1ws+jiQpYaBnbRDhvCyDiHA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -205,7 +205,16 @@
       </SSIS:Project>
     </Manifest>
   </DeploymentModelSpecificContent>
-  <Miscellaneous />
+  <Miscellaneous>
+    <ProjectItem>
+      <Name>scripts for ag Login mirroring complete.sql</Name>
+      <FullPath>scripts for ag Login mirroring complete.sql</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>AG Login Sync.ispac</Name>
+      <FullPath>AG Login Sync.ispac</FullPath>
+    </ProjectItem>
+  </Miscellaneous>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
