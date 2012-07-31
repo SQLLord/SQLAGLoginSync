@@ -1,0 +1,804 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/26/2012 5:15:01 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="N1"
+  DTS:CreatorName="SSIS\administrator"
+  DTS:DTSID="{FB6BD366-B0F6-4740-873E-0C50579AF8F0}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="AlwaysOnLoginSync"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{165A007D-A099-4284-BA9B-E5CC8D9779C0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Listener]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+      DTS:ObjectName="Listener">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ListenerServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=agblist;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}n1.master;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Secondary]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+      DTS:ObjectName="Secondary">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::SecondaryServername]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N2;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{18FA540A-E60F-4868-8333-B72B4BDE04B6}n2.master;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E16A490-72FE-4C79-86BD-458FCBFC0585}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AddLoginCommand">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{73FE7288-A018-4D0F-8D68-6B7CA6128E21}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ListofLogins">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F770C2C7-7FBD-48E9-BAB6-AB1A34D95DA4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoginExists">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{59E73DA4-CCD7-45CE-B701-718A5853E396}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoginName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{85607F51-AF69-49CC-869E-62CB09CA8DA7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoginSIDMatch">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{923A547B-2527-48D5-A66E-EAC337B50928}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoginType">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E0206A1-FB2E-40B1-9083-7CF4C56D1A3C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SecondaryServername">
+      <DTS:VariableValue
+        DTS:DataType="8">N2</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D608CB76-2537-4008-8ADF-C379DCF0D875}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerLevelRolesSettings">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{504F939D-63F9-4A0F-876D-3614C9D6E226}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerRoleCommand">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C2AC13EB-CF65-4730-BE8F-7F6291D33EF2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SIDString">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{C394D352-391C-43D7-BD8C-A4FE78405135}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cycle Through list of logins checking if they exist and adding if they dont">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:DTSID="{0BC5C2B0-4DE4-4BB1-8614-9B8AD8033546}"
+        DTS:ObjectName="{0BC5C2B0-4DE4-4BB1-8614-9B8AD8033546}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::ListofLogins" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ABB4DF51-1472-43D8-9E6F-8B137F2350A1}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check if login exists in secondary server"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:SqlStatementSource="&#xA;select count(*) from sys.syslogins where name = @loginName"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoginExists" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@loginName"
+                SQLTask:DtsVariableName="User::LoginName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{A811D0DD-EDB9-44BB-8D0E-8D04A1F94917}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cycle through all of the Server Level Roles that a Login Has">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+            DTS:DTSID="{09956B8B-3AF9-4051-A2AB-AB541708A286}"
+            DTS:ObjectName="{09956B8B-3AF9-4051-A2AB-AB541708A286}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::ServerLevelRolesSettings" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has\Add Role to Login on Secondary"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1E34F215-BE95-4967-86DB-4910298BECF5}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Add Role to Login on Secondary"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::ServerRoleCommand" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{0C790DA2-2825-4D2B-80DB-466A9BD3AD3D}"
+              DTS:ObjectName="{0C790DA2-2825-4D2B-80DB-466A9BD3AD3D}"
+              DTS:ValueIndex="2"
+              DTS:VariableName="User::ServerRoleCommand" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8FACACB4-3D4C-4164-BEDA-750EC2AF0158}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Drop Login"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="usp_Drop_Login_Command" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@login_name"
+                SQLTask:DtsVariableName="User::LoginName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0884C28E-59AD-49E3-9785-A30911CFD46F}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get List of Server Roles for the Login"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="usp_get_list_of_Login_Roles"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::ServerLevelRolesSettings" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@loginName"
+                SQLTask:DtsVariableName="User::LoginName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@IncludeSysAdmin"
+                SQLTask:DtsVariableName="$Project::SyncServerLevelRoleMembershipEvenIfSysAdmin"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="2"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0295483C-6878-41EA-BE90-16304D58EEB1}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="If Login Exists Check to See if SID Matches"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:IsStoredProc="True"
+              SQLTask:SqlStatementSource="usp_Compare_Login_SID"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoginSIDMatch" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@login_name"
+                SQLTask:DtsVariableName="User::LoginName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@sidstring"
+                SQLTask:DtsVariableName="User::SIDString"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7C736F17-1208-48BC-8969-1A54E8254C0E}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="If login is missing add login to server"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::AddLoginCommand" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E670550D-9758-441A-BAF7-3CEA2654E18F}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::LoginExists] ==0"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EBEBEB67-13CA-4F6D-8EE3-A8AF855598B1}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::LoginExists] &gt; 0 &amp;&amp;  @[$Project::DropandRecreateLoginIfSIDMismatch] == true &amp;&amp;  @[User::LoginType] == &quot;S&quot;"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{37B804B9-385E-4F83-B7DF-8CC4AA9F9A80}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::LoginSIDMatch] == 0"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{215EBA74-F977-4481-9B0F-96EABBEC1796}"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{7C1F8DF1-AAFC-460B-8A1F-B1B03EEFB621}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[$Project::SyncServerLevelRoleMembership] == true"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{B4370E65-5C85-412D-93D5-FCD08C97B9A9}"
+          DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{B9F93D60-652C-4480-824F-B7A25E1928AA}"
+          DTS:ObjectName="{B9F93D60-652C-4480-824F-B7A25E1928AA}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::SecondaryServername" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{562249A9-525D-45BB-9EDF-B09352CBAA90}"
+          DTS:ObjectName="{562249A9-525D-45BB-9EDF-B09352CBAA90}"
+          DTS:ValueIndex="7"
+          DTS:VariableName="User::LoginName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{9556E5C5-97EE-4912-B3C3-E4A72B8D1196}"
+          DTS:ObjectName="{9556E5C5-97EE-4912-B3C3-E4A72B8D1196}"
+          DTS:ValueIndex="8"
+          DTS:VariableName="User::AddLoginCommand" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{7E7636EB-08B4-422C-9843-8668A55B0BC5}"
+          DTS:ObjectName="{7E7636EB-08B4-422C-9843-8668A55B0BC5}"
+          DTS:ValueIndex="10"
+          DTS:VariableName="User::LoginType" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{EC65AE2A-4D65-495B-970B-7361FFF23AAA}"
+          DTS:ObjectName="{EC65AE2A-4D65-495B-970B-7361FFF23AAA}"
+          DTS:ValueIndex="9"
+          DTS:VariableName="User::SIDString" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load List of logins by AG to apply to Secondaries"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C68F1BEF-BF3D-42EB-A151-FF20C1E2D83A}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load List of logins by AG to apply to Secondaries"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="usp_get_list_of_AG_Logins"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ListofLogins" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Listenername"
+            SQLTask:DtsVariableName="$Project::ListenerServerName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9A77CC0B-B0CC-4626-A3B4-68EB73FDBB81}"
+      DTS:From="Package\Load List of logins by AG to apply to Secondaries"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="268,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
+          TopLeft="90,37" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
+          TopLeft="102,245" />
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint]"
+          TopLeft="180.666666666667,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.3333333333333,166"
+              Start="0,0"
+              End="48.3333333333333,158.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.9910979228487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.9910979228487"
+                    Point2="0,66.9910979228487"
+                    Point3="4,66.9910979228487" />
+                  <mssgle:LineSegment
+                    End="44.3333333333333,66.9910979228487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.3333333333333,66.9910979228487"
+                    Point2="48.3333333333333,66.9910979228487"
+                    Point3="48.3333333333333,70.9910979228487" />
+                  <mssgle:LineSegment
+                    End="48.3333333333333,158.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.1666666666667,71.9910979228487,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
+          TopLeft="364,106" />
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 1]"
+          TopLeft="267.333333333333,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238.166666666667,27"
+              Start="0,0"
+              End="238.166666666667,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.89614243323442" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.89614243323442"
+                    Point2="0,10.8961424332344"
+                    Point3="4,10.8961424332344" />
+                  <mssgle:LineSegment
+                    End="234.166666666667,10.8961424332344" />
+                  <mssgle:CubicBezierSegment
+                    Point1="234.166666666667,10.8961424332344"
+                    Point2="238.166666666667,10.8961424332344"
+                    Point3="238.166666666667,14.8961424332344" />
+                  <mssgle:LineSegment
+                    End="238.166666666667,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="111.083333333333,15.8961424332344,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
+          TopLeft="400,186" />
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 2]"
+          TopLeft="505.5,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,38"
+              Start="0,0"
+              End="9,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,19"
+                    Point2="9,19"
+                    Point3="9,23" />
+                  <mssgle:LineSegment
+                    End="9,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.5,24,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 3]"
+          TopLeft="400,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44,59"
+              Start="0,0"
+              End="-36.5,59">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18,0"
+                    Point2="-22,0"
+                    Point3="-22,4" />
+                  <mssgle:LineSegment
+                    End="-22,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22,55"
+                    Point2="-22,59"
+                    Point3="-26,59" />
+                  <mssgle:LineSegment
+                    End="-36.5,59" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
+          TopLeft="126,327" />
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 4]"
+          TopLeft="229,287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,40"
+              Start="0,0"
+              End="24,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="20,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,20"
+                    Point2="24,20"
+                    Point3="24,24" />
+                  <mssgle:LineSegment
+                    End="24,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4,25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has\Add Role to Login on Secondary"
+          TopLeft="46,18" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="419,115"
+          Size="419,158"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has"
+          TopLeft="86,400" />
+        <EdgeLayout
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 5]"
+          TopLeft="253,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.5,31"
+              Start="0,0"
+              End="42.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="38.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.5,15.5"
+                    Point2="42.5,15.5"
+                    Point3="42.5,19.5" />
+                  <mssgle:LineSegment
+                    End="42.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="652,613"
+          Size="652,656"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont"
+          TopLeft="104,128" />
+        <NodeLayout
+          Size="310,42"
+          Id="Package\Load List of logins by AG to apply to Secondaries"
+          TopLeft="140,59" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="295,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135,27"
+              Start="0,0"
+              End="135,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="131,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131,13.5"
+                    Point2="135,13.5"
+                    Point3="135,17.5" />
+                  <mssgle:LineSegment
+                    End="135,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

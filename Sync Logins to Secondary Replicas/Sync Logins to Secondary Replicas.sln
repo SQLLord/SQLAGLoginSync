@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Sync Logins to Secondary Replicas", "Sync Logins to Secondary Replicas\Sync Logins to Secondary Replicas.dtproj", "{0B0D2C4C-133A-4CC7-9E4D-89F036427420}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs21
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Sync\u0020Logins\u0020to\u0020Secondary\u0020Replicas\\Sync\u0020Logins\u0020to\u0020Secondary\u0020Replicas.dtproj
+		SccProjectName1 = Sync\u0020Logins\u0020to\u0020Secondary\u0020Replicas
+		SccLocalPath1 = Sync\u0020Logins\u0020to\u0020Secondary\u0020Replicas
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B0D2C4C-133A-4CC7-9E4D-89F036427420}.Development|Default.ActiveCfg = Development
+		{0B0D2C4C-133A-4CC7-9E4D-89F036427420}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
