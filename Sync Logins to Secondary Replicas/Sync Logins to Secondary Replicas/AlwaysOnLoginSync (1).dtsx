@@ -5,14 +5,14 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="N1"
   DTS:CreatorName="SSIS\administrator"
-  DTS:DTSID="{FB6BD366-B0F6-4740-873E-0C50579AF8F0}"
+  DTS:DTSID="{C0F9388F-10C5-4629-86BC-87275864B629}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LastModifiedProductVersion="11.0.5058.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="AlwaysOnLoginSync"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{165A007D-A099-4284-BA9B-E5CC8D9779C0}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{873612C7-2EA8-4B12-A725-517C9CB1A175}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -20,33 +20,33 @@
       DTS:refId="Package.ConnectionManagers[Listener]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DelayValidation="True"
-      DTS:DTSID="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+      DTS:DTSID="{39919589-E122-4DC0-A8C4-BF38145ACC3D}"
       DTS:ObjectName="Listener">
       <DTS:PropertyExpression
         DTS:Name="ServerName">@[$Project::ListenerServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=agblist;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}n1.master;" />
+          DTS:ConnectionString="Data Source=agblist;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{39919589-E122-4DC0-A8C4-BF38145ACC3D}n1.master;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Secondary]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DelayValidation="True"
-      DTS:DTSID="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+      DTS:DTSID="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
       DTS:ObjectName="Secondary">
       <DTS:PropertyExpression
         DTS:Name="ServerName">@[User::SecondaryServername]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=N2;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{18FA540A-E60F-4868-8333-B72B4BDE04B6}n2.master;" />
+          DTS:ConnectionString="Data Source=N2;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}n2.master;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2E16A490-72FE-4C79-86BD-458FCBFC0585}"
+      DTS:DTSID="{A2360D4A-1D75-4C13-9594-4950B928B960}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="AddLoginCommand">
@@ -56,7 +56,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{73FE7288-A018-4D0F-8D68-6B7CA6128E21}"
+      DTS:DTSID="{B3E9EC08-017F-4ED3-B3B6-71B1EAAB7458}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ListofLogins">
@@ -74,7 +74,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F770C2C7-7FBD-48E9-BAB6-AB1A34D95DA4}"
+      DTS:DTSID="{E3B88EB8-FC84-424F-AEDD-F13655DAAF89}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LoginExists">
@@ -83,7 +83,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{59E73DA4-CCD7-45CE-B701-718A5853E396}"
+      DTS:DTSID="{15AD894C-EF76-430F-830B-BED7C58D0993}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LoginName">
@@ -93,7 +93,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{85607F51-AF69-49CC-869E-62CB09CA8DA7}"
+      DTS:DTSID="{B2289C00-BE45-4BF2-ABDF-6C4772F59FA3}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LoginSIDMatch">
@@ -102,7 +102,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{923A547B-2527-48D5-A66E-EAC337B50928}"
+      DTS:DTSID="{6052D651-81CC-4590-B977-73DAE9AADE7E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LoginType">
@@ -112,7 +112,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E0206A1-FB2E-40B1-9083-7CF4C56D1A3C}"
+      DTS:DTSID="{1A46305C-8EC9-4A27-95E8-CD6332BF8312}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SecondaryServername">
@@ -121,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D608CB76-2537-4008-8ADF-C379DCF0D875}"
+      DTS:DTSID="{0C1E88ED-A59E-4F6A-8FB8-F6E5F96743B4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ServerLevelRolesSettings">
@@ -139,7 +139,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{504F939D-63F9-4A0F-876D-3614C9D6E226}"
+      DTS:DTSID="{968A4F52-F44B-40AF-9C47-F9FC5B873626}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ServerRoleCommand">
@@ -149,7 +149,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C2AC13EB-CF65-4730-BE8F-7F6291D33EF2}"
+      DTS:DTSID="{C6D72D3C-2A3A-4277-B972-B4681DA96BA5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SIDString">
@@ -163,14 +163,14 @@
       DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{C394D352-391C-43D7-BD8C-A4FE78405135}"
+      DTS:DTSID="{ECE43588-ACCB-4ED4-964F-69091FE7E782}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cycle Through list of logins checking if they exist and adding if they dont">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-        DTS:DTSID="{0BC5C2B0-4DE4-4BB1-8614-9B8AD8033546}"
-        DTS:ObjectName="{0BC5C2B0-4DE4-4BB1-8614-9B8AD8033546}">
+        DTS:DTSID="{2BE2A0F6-E3E8-4BA5-A226-8317BD391731}"
+        DTS:ObjectName="{2BE2A0F6-E3E8-4BA5-A226-8317BD391731}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -183,7 +183,7 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ABB4DF51-1472-43D8-9E6F-8B137F2350A1}"
+          DTS:DTSID="{12368894-BE5D-4679-BE3E-38D1A803C7BB}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Check if login exists in secondary server"
@@ -192,7 +192,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:Connection="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
               SQLTask:SqlStatementSource="&#xA;select count(*) from sys.syslogins where name = @loginName"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
@@ -211,14 +211,14 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has"
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:Description="Foreach Loop Container"
-          DTS:DTSID="{A811D0DD-EDB9-44BB-8D0E-8D04A1F94917}"
+          DTS:DTSID="{D0D15B83-8834-450A-8C93-7A4BFEC4A879}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cycle through all of the Server Level Roles that a Login Has">
           <DTS:ForEachEnumerator
             DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-            DTS:DTSID="{09956B8B-3AF9-4051-A2AB-AB541708A286}"
-            DTS:ObjectName="{09956B8B-3AF9-4051-A2AB-AB541708A286}">
+            DTS:DTSID="{9B1E1527-AD80-4E30-B037-F68F19844136}"
+            DTS:ObjectName="{9B1E1527-AD80-4E30-B037-F68F19844136}">
             <DTS:ObjectData>
               <FEEADO
                 EnumType="EnumerateRowsInFirstTable"
@@ -231,7 +231,7 @@
               DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has\Add Role to Login on Secondary"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{1E34F215-BE95-4967-86DB-4910298BECF5}"
+              DTS:DTSID="{E46C4FB1-CF70-4594-9C76-BDBF03C1EB72}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="Add Role to Login on Secondary"
@@ -240,7 +240,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+                  SQLTask:Connection="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
                   SQLTask:SqlStmtSourceType="Variable"
                   SQLTask:SqlStatementSource="User::ServerRoleCommand" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
@@ -249,8 +249,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{0C790DA2-2825-4D2B-80DB-466A9BD3AD3D}"
-              DTS:ObjectName="{0C790DA2-2825-4D2B-80DB-466A9BD3AD3D}"
+              DTS:DTSID="{FFC7F303-F42E-4056-8D61-A4101BB08DFC}"
+              DTS:ObjectName="{FFC7F303-F42E-4056-8D61-A4101BB08DFC}"
               DTS:ValueIndex="2"
               DTS:VariableName="User::ServerRoleCommand" />
           </DTS:ForEachVariableMappings>
@@ -259,7 +259,7 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8FACACB4-3D4C-4164-BEDA-750EC2AF0158}"
+          DTS:DTSID="{F62D3D8E-E4B1-49A5-A6C7-CBBDE1966AF3}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Login"
@@ -268,7 +268,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:Connection="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
               SQLTask:IsStoredProc="True"
               SQLTask:SqlStatementSource="usp_Drop_Login_Command" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -284,7 +284,7 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0884C28E-59AD-49E3-9785-A30911CFD46F}"
+          DTS:DTSID="{1AE43476-2C49-4A50-BD81-21DC3D58DE82}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get List of Server Roles for the Login"
@@ -293,7 +293,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+              SQLTask:Connection="{39919589-E122-4DC0-A8C4-BF38145ACC3D}"
               SQLTask:IsStoredProc="True"
               SQLTask:SqlStatementSource="usp_get_list_of_Login_Roles"
               SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -319,7 +319,7 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0295483C-6878-41EA-BE90-16304D58EEB1}"
+          DTS:DTSID="{FB27DE8D-7D06-4B3C-BF5C-55DA794425A4}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="If Login Exists Check to See if SID Matches"
@@ -328,7 +328,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:Connection="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
               SQLTask:IsStoredProc="True"
               SQLTask:SqlStatementSource="usp_Compare_Login_SID"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -354,7 +354,7 @@
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7C736F17-1208-48BC-8969-1A54E8254C0E}"
+          DTS:DTSID="{223F11EA-9B05-41AD-98EA-367CB8DD9A5D}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="If login is missing add login to server"
@@ -363,7 +363,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{18FA540A-E60F-4868-8333-B72B4BDE04B6}"
+              SQLTask:Connection="{805A1574-DDC9-45C7-BBBD-09D2ECC4894A}"
               SQLTask:SqlStmtSourceType="Variable"
               SQLTask:SqlStatementSource="User::AddLoginCommand" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
@@ -373,7 +373,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E670550D-9758-441A-BAF7-3CEA2654E18F}"
+          DTS:DTSID="{BDDEA6E9-0483-48B6-9464-3B26663F4F84}"
           DTS:EvalOp="3"
           DTS:Expression="@[User::LoginExists] ==0"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
@@ -382,7 +382,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{EBEBEB67-13CA-4F6D-8EE3-A8AF855598B1}"
+          DTS:DTSID="{B03E8E01-09DC-4B06-8DCF-D27FA6BA64B2}"
           DTS:EvalOp="3"
           DTS:Expression="@[User::LoginExists] &gt; 0 &amp;&amp;  @[$Project::DropandRecreateLoginIfSIDMismatch] == true &amp;&amp;  @[User::LoginType] == &quot;S&quot;"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
@@ -391,7 +391,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{37B804B9-385E-4F83-B7DF-8CC4AA9F9A80}"
+          DTS:DTSID="{287A14FF-3F0F-4077-9558-D9B94BB0C74B}"
           DTS:EvalOp="3"
           DTS:Expression="@[User::LoginSIDMatch] == 0"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
@@ -401,14 +401,14 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{215EBA74-F977-4481-9B0F-96EABBEC1796}"
+          DTS:DTSID="{731B8344-009F-4ABD-B1EF-35175F2F59DC}"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{7C1F8DF1-AAFC-460B-8A1F-B1B03EEFB621}"
+          DTS:DTSID="{F11F4931-04D8-40A0-B268-871A4571DD6A}"
           DTS:EvalOp="3"
           DTS:Expression="@[$Project::SyncServerLevelRoleMembership] == true"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
@@ -418,7 +418,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{B4370E65-5C85-412D-93D5-FCD08C97B9A9}"
+          DTS:DTSID="{B5204CA6-6A10-44D1-AE45-56C9B9EF402E}"
           DTS:From="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -427,32 +427,32 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{B9F93D60-652C-4480-824F-B7A25E1928AA}"
-          DTS:ObjectName="{B9F93D60-652C-4480-824F-B7A25E1928AA}"
+          DTS:DTSID="{837BB593-4E25-434C-9301-4E06CEC1B054}"
+          DTS:ObjectName="{837BB593-4E25-434C-9301-4E06CEC1B054}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::SecondaryServername" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{562249A9-525D-45BB-9EDF-B09352CBAA90}"
-          DTS:ObjectName="{562249A9-525D-45BB-9EDF-B09352CBAA90}"
+          DTS:DTSID="{FD81D9CC-2774-4FAC-8076-BB9E7ED19CC4}"
+          DTS:ObjectName="{FD81D9CC-2774-4FAC-8076-BB9E7ED19CC4}"
           DTS:ValueIndex="7"
           DTS:VariableName="User::LoginName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{9556E5C5-97EE-4912-B3C3-E4A72B8D1196}"
-          DTS:ObjectName="{9556E5C5-97EE-4912-B3C3-E4A72B8D1196}"
+          DTS:DTSID="{A9E98B28-DE88-439D-9E84-F678D44EB973}"
+          DTS:ObjectName="{A9E98B28-DE88-439D-9E84-F678D44EB973}"
           DTS:ValueIndex="8"
           DTS:VariableName="User::AddLoginCommand" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{7E7636EB-08B4-422C-9843-8668A55B0BC5}"
-          DTS:ObjectName="{7E7636EB-08B4-422C-9843-8668A55B0BC5}"
+          DTS:DTSID="{9FD9BA25-7013-416A-94C6-3DF48E6311FA}"
+          DTS:ObjectName="{9FD9BA25-7013-416A-94C6-3DF48E6311FA}"
           DTS:ValueIndex="10"
           DTS:VariableName="User::LoginType" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{EC65AE2A-4D65-495B-970B-7361FFF23AAA}"
-          DTS:ObjectName="{EC65AE2A-4D65-495B-970B-7361FFF23AAA}"
+          DTS:DTSID="{1274DF4E-4860-4594-99FF-70B1EEF0B868}"
+          DTS:ObjectName="{1274DF4E-4860-4594-99FF-70B1EEF0B868}"
           DTS:ValueIndex="9"
           DTS:VariableName="User::SIDString" />
       </DTS:ForEachVariableMappings>
@@ -461,7 +461,7 @@
       DTS:refId="Package\Load List of logins by AG to apply to Secondaries"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C68F1BEF-BF3D-42EB-A151-FF20C1E2D83A}"
+      DTS:DTSID="{BAA9E681-792F-45F7-80E8-F678223411C3}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load List of logins by AG to apply to Secondaries"
@@ -470,7 +470,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{5FEFFC8F-2E35-4978-A5E8-1E14ABE4D101}"
+          SQLTask:Connection="{39919589-E122-4DC0-A8C4-BF38145ACC3D}"
           SQLTask:IsStoredProc="True"
           SQLTask:SqlStatementSource="usp_get_list_of_AG_Logins"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -491,7 +491,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{9A77CC0B-B0CC-4626-A3B4-68EB73FDBB81}"
+      DTS:DTSID="{3B6D4AE3-B6CC-4398-9D27-52B631FBBBD8}"
       DTS:From="Package\Load List of logins by AG to apply to Secondaries"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -513,6 +513,29 @@
           Size="268,42"
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Check if login exists in secondary server"
           TopLeft="90,37" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has\Add Role to Login on Secondary"
+          TopLeft="46,18" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="419,115"
+          Size="419,158"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has"
+          TopLeft="86,400" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
+          TopLeft="400,186" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
+          TopLeft="126,327" />
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
+          TopLeft="364,106" />
         <NodeLayout
           Size="254,42"
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
@@ -553,10 +576,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="283,42"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If Login Exists Check to See if SID Matches"
-          TopLeft="364,106" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 1]"
           TopLeft="267.333333333333,79">
@@ -593,10 +612,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Drop Login"
-          TopLeft="400,186" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 2]"
           TopLeft="505.5,148">
@@ -667,10 +682,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="254,42"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Get List of Server Roles for the Login"
-          TopLeft="126,327" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 4]"
           TopLeft="229,287">
@@ -707,17 +718,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has\Add Role to Login on Secondary"
-          TopLeft="46,18" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="419,115"
-          Size="419,158"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\Cycle through all of the Server Level Roles that a Login Has"
-          TopLeft="86,400" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 5]"
           TopLeft="253,369">
