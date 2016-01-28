@@ -5,14 +5,14 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="N1"
   DTS:CreatorName="SSIS\administrator"
-  DTS:DTSID="{C0F9388F-10C5-4629-86BC-87275864B629}"
+  DTS:DTSID="{7D1295BC-B73A-4BBA-9842-8B156A20136E}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5058.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="AlwaysOnLoginSync"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{873612C7-2EA8-4B12-A725-517C9CB1A175}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{5D9948BF-8577-4076-88AB-F8C825B6E75A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
