@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">N1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAngTuBN+0G0Wuo1CYRsJ7sgAAAAACAAAAAAADZgAAwAAAABAAAADZZWGmW1HI6NRrJEWhcgTVAAAAAASAAACgAAAAEAAAAI6r8PcLWrbb0NvU/UF2vcWIAAAArjS8Zz1UbidroihAWMae4hFQYCR4lp4HX5kwUrMoaE1CrpkAVk9VQeBAk4lkHSbH8TUMg9Pv3VLZ42yd3KORrZlS9e7nIn3LrJkl/+DO+64neVg/cTw4yDKA5i7rqQcnDE/Y8ZTVvpFB2Y6cTa5fb6o4mP+ambeSiQJWIXO3e/W9P38ilqBN3hQAAAAqH6I0kZoT/U8mcdD9kunSyPhMoQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAngTuBN+0G0Wuo1CYRsJ7sgAAAAACAAAAAAADZgAAwAAAABAAAAAc5x4CUUfKt8rr1m7mzb7zAAAAAASAAACgAAAAEAAAADDL1Lg/qlF+QPabSBzYMTSIAAAAFhiGRw2DqnJLLzpaVSMITN25FHpK4DXRVljvQNI/yWZSVfT1TOBOXUQbDv22b2LmJGAGOzN4Wd9NWZgx+JXlm/etcBxx5zi3UAhslEJ2diAIYQsA0PUwHo3ROtYMCoMue23OWZDBRIYQ95nS+Kkr1BC4oxu6AG/UmGWYAPp4+Cq31HnPG/GNdxQAAABeon/98HXGJohO+CcyBwRcM/HbCg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">AlwaysOnLoginSync</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">42</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{27874E3A-4202-4DD8-B44A-A2CAB82CA90D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6ED1A99D-A6E9-4F48-A492-2D6FDD5C71D3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -211,8 +211,8 @@
       <FullPath>scripts for ag Login mirroring complete.sql</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>AG Login Sync.ispac</Name>
-      <FullPath>AG Login Sync.ispac</FullPath>
+      <Name>Sync Logins to Secondary Replicas.ispac</Name>
+      <FullPath>Sync Logins to Secondary Replicas.ispac</FullPath>
     </ProjectItem>
   </Miscellaneous>
   <Configurations>
