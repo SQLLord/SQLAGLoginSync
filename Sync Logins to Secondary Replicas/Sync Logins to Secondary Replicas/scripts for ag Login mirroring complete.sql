@@ -40,6 +40,7 @@ GO
  @IncludeServerRolesAll Varchar(10)
 AS
   BEGIN
+		------Version 3.01
       ----Script to gather login info and prep for loading in secondary servers---------
       ----------------------------------------------------------------------------------
       -----create temp table to store login and replica info----------------------------
@@ -141,6 +142,7 @@ AS
                  + '.sys.sysusers as a join sys.syslogins as b on a.sid = b.sid 
 				  where b.loginname not like ''NT Authority%''
 				  and b.loginname not like ''NT Service%''
+				  and b.loginname <> ''sa''
 				 '
 
 				EXECUTE (@selectcommand)
@@ -442,7 +444,7 @@ create procedure usp_Compare_Login_SID
 @sidstring Nvarchar (514)
 as
 Begin
-
+	-----version 3.01
 	DECLARE @SID_varbinary varbinary (85)
 	DECLARE @SID_string varchar (514) 
 	select @SID_varbinary = sid from sys.syslogins where name = @login_name
@@ -475,7 +477,7 @@ create procedure usp_Compare_Login_PWD
 @PWDstring Nvarchar (514)
 as
 Begin
-	
+	----version 3.01
 	DECLARE @PWD_varbinary VARBINARY (256)
 	DECLARE @PWD_string varchar (514) 
 	
@@ -516,6 +518,7 @@ create procedure usp_Drop_Login_Command
 
 as
 Begin
+---version 3.01
 declare @command varchar(max)
 set @command = 'Drop Login [' + @login_name + ']'
 exec(@command)
@@ -534,7 +537,7 @@ create procedure usp_get_list_of_Login_Roles
 @IncludeSysAdmin bit
 as
 Begin
-
+---version 3.01
 
 If @IncludeSysAdmin = 1
 	Begin
