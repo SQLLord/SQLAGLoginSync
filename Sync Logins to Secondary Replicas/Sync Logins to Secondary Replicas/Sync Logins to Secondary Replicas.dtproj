@@ -16,7 +16,7 @@
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{e9e67b47-caa0-4c95-aa7c-51340aecff20}</SSIS:Property>
           <SSIS:Property SSIS:Name="Name">Sync Logins to Secondary Replicas</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMajor">2</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionComments">
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">N1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAngTuBN+0G0Wuo1CYRsJ7sgAAAAACAAAAAAADZgAAwAAAABAAAAAc5x4CUUfKt8rr1m7mzb7zAAAAAASAAACgAAAAEAAAADDL1Lg/qlF+QPabSBzYMTSIAAAAFhiGRw2DqnJLLzpaVSMITN25FHpK4DXRVljvQNI/yWZSVfT1TOBOXUQbDv22b2LmJGAGOzN4Wd9NWZgx+JXlm/etcBxx5zi3UAhslEJ2diAIYQsA0PUwHo3ROtYMCoMue23OWZDBRIYQ95nS+Kkr1BC4oxu6AG/UmGWYAPp4+Cq31HnPG/GNdxQAAABeon/98HXGJohO+CcyBwRcM/HbCg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAngTuBN+0G0Wuo1CYRsJ7sgAAAAACAAAAAAADZgAAwAAAABAAAAB4ho6cS8Bg/ELsEtm1JDZaAAAAAASAAACgAAAAEAAAAOPLtCLd3MjN6DxkB7t104uIAAAAHj51WrGAYo3cfl72jc0gwLN8Q7GUcqfIyLkiHK84mkfHHfiwaalaPWMxw5tNgC8D4ml+WBae+jph5I7U9GtFpXWyqY13LM2cCtAHgVou/SSsXAWUwRM0Wcg/c+nMEU5LiwK9LPIXRk46nmY3pHkFpwowh+/96hi3jpGIzuU0DAhUur7ii+GimBQAAABHy3PzV+r5WMJRwSNxiS5K1vAatg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
