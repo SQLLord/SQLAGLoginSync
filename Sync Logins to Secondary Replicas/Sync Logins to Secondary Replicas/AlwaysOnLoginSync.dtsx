@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AlwaysOnLoginSync"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{6ED1A99D-A6E9-4F48-A492-2D6FDD5C71D3}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{0593CBEF-290C-451F-9685-9EA3CF0D0320}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -624,6 +624,10 @@
           Size="254,42"
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If login is missing add login to server"
           TopLeft="102,245" />
+        <NodeLayout
+          Size="290,42"
+          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If SID Matches Check to see if PWD Matches"
+          TopLeft="743,176" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint]"
           TopLeft="180.666666666667,79">
@@ -698,37 +702,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 2]"
-          TopLeft="505.5,148">
+          TopLeft="459.666666666667,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,38"
+              EndConnector="54.8333333333334,38"
               Start="0,0"
-              End="9,30.5">
+              End="54.8333333333334,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15" />
+                    End="0,11.3281799016163" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
+                    Point1="0,11.3281799016163"
+                    Point2="0,15.3281799016163"
+                    Point3="4,15.3281799016163" />
                   <mssgle:LineSegment
-                    End="5,19" />
+                    End="50.8333333333334,15.3281799016163" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,19"
-                    Point2="9,19"
-                    Point3="9,23" />
+                    Point1="50.8333333333334,15.3281799016163"
+                    Point2="54.8333333333334,15.3281799016163"
+                    Point3="54.8333333333334,19.3281799016163" />
                   <mssgle:LineSegment
-                    End="9,30.5" />
+                    End="54.8333333333334,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-3.5,24,16,16"
+              BoundingBox="19.4166666666667,20.3281799016163,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -836,10 +840,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="290,42"
-          Id="Package\Cycle Through list of logins checking if they exist and adding if they dont\If SID Matches Check to see if PWD Matches"
-          TopLeft="743,176" />
         <EdgeLayout
           Id="Package\Cycle Through list of logins checking if they exist and adding if they dont.PrecedenceConstraints[Constraint 6]"
           TopLeft="551.333333333333,148">
